@@ -1,0 +1,967 @@
+{
+  "info": {
+    "_postman_id": "d4eecb73-7d92-4651-b9f8-7819c995cc69",
+    "name": "ecomerceAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20097900"
+  },
+  "item": [
+    {
+      "name": "products/getall",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDE3NzIsImV4cCI6MTc3NTU0NTM3MiwibmJmIjoxNzc1NTQxNzcyLCJqdGkiOiJRMlY3emtEdzRkTEFrOXdWIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiY2xpZW50IiwibmFtZSI6Ikphbmx1eSBNb3Jlbm8iLCJlbWFpbCI6Imphbmx1eS5tb3Jlbm9AZ21haWwuY29tIn0.EHVGmUsu3eTkVZJ8Xkj_WATBZ7dclLApyQ543_fheZY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "products/getall-errortoken",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 06:25:07 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Token no proporcionado\"\n}"
+        },
+        {
+          "name": "products/getall",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 06:26:41 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"suscipit commodi voluptatem\",\n        \"description\": \"Laborum soluta magni neque est aliquam. Facere sit est sit et vero blanditiis. Sit ad doloremque officia dolorem mollitia. Expedita ut doloribus a.\\n\\nEligendi reiciendis assumenda expedita et sit et laboriosam nulla. Nemo ut recusandae quia qui. Architecto aliquam rerum quisquam voluptatem facere nisi. Autem et dolorum assumenda dolorem exercitationem quibusdam labore.\",\n        \"price\": \"465.44\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 422,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"totam dicta ipsam\",\n        \"description\": \"Consequatur perferendis ullam consectetur doloremque facere dicta autem. Placeat distinctio non possimus. Nostrum et est quis deleniti. Sint quo incidunt quis laboriosam.\\n\\nEius qui natus nemo. Quidem sed unde quaerat ad. Est nemo repellendus rem. Quia amet quasi id illum. Consectetur rem voluptatem et et quo.\",\n        \"price\": \"691.49\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 42,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"omnis voluptates architecto\",\n        \"description\": \"Ipsa ut aut aut quasi neque et laudantium. Ut iusto voluptate nihil at.\\n\\nNam aut sed natus distinctio minus. Nihil quaerat qui repellat consectetur ut cumque. Sed sequi voluptas quae maiores quis a.\",\n        \"price\": \"698.41\",\n        \"is_active\": false,\n        \"discontinued\": true,\n        \"stock\": 129,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"quis veritatis aspernatur\",\n        \"description\": \"Aut blanditiis pariatur quia asperiores est quibusdam. Odit tempore mollitia laborum fugiat consequatur. Vel aspernatur ducimus ipsum id excepturi. Ipsam enim sed unde enim rerum non autem.\\n\\nAperiam cupiditate magni aspernatur. Perspiciatis qui officia repellat dolor dolorem sint. Autem aut mollitia corporis. Consectetur nesciunt dolor ut nulla officia voluptatem.\",\n        \"price\": \"781.02\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 485,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"ut deserunt eum\",\n        \"description\": \"Consequatur voluptatem debitis sunt quia. Tempore qui soluta consequatur dignissimos veniam ut. Tempora quia sed amet porro officiis itaque voluptatum. Reprehenderit similique dolor laborum voluptates. Corporis quae quis voluptatem aut.\\n\\nDoloribus minus qui ipsum. Dignissimos eos eos a adipisci minus et aut autem. Asperiores vitae voluptatum dignissimos ipsam dolor nam optio. Nobis voluptas incidunt aut consequuntur.\",\n        \"price\": \"121.41\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 472,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"natus voluptatem odio\",\n        \"description\": \"Commodi aperiam et quasi. Pariatur totam quia possimus quisquam.\\n\\nIllum enim repellendus incidunt. Animi voluptas hic vel voluptas et. Error totam temporibus aut laboriosam. Sunt omnis delectus necessitatibus hic sunt.\",\n        \"price\": \"615.60\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 499,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"veritatis laudantium ullam\",\n        \"description\": \"Officia ullam quo occaecati. Nesciunt voluptate omnis sit. Excepturi veniam cumque quia consequatur dolor corrupti iure.\\n\\nMaiores rem harum et ut id. Sed est natus perferendis fugiat deleniti aperiam. Est sit deserunt vero minima est. Est accusamus et rem incidunt.\",\n        \"price\": \"319.44\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 191,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 8,\n        \"name\": \"ut quis dicta\",\n        \"description\": \"Officiis et mollitia cumque aliquam qui doloremque soluta. Rerum officia sunt veniam provident saepe. Enim labore magnam optio et dolorem.\\n\\nNihil quo delectus dolor consectetur iusto. Aspernatur qui sit quam qui accusantium numquam reiciendis. Et autem quos labore beatae. Sunt rem necessitatibus quia et ducimus hic.\",\n        \"price\": \"979.40\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 106,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 9,\n        \"name\": \"vel id et\",\n        \"description\": \"Rerum esse modi eum deleniti est possimus omnis. Quia est aut et sed.\\n\\nRecusandae distinctio dolores numquam. Doloribus dolore ipsa velit pariatur. Ut repudiandae soluta sit voluptas odit id omnis. Rem impedit ut pariatur iusto.\",\n        \"price\": \"387.33\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 426,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 10,\n        \"name\": \"et perferendis maiores\",\n        \"description\": \"Nihil distinctio esse voluptatem nisi sint itaque. Saepe sed et occaecati est. Optio tempore qui et laborum.\\n\\nQui voluptatum eos ipsam eos consequatur et. Beatae et hic autem ratione nisi eum. Voluptas quia deleniti et possimus excepturi aut. Fugit doloremque quia est et corrupti est repellat neque.\",\n        \"price\": \"355.72\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 109,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 11,\n        \"name\": \"consequatur quod quod\",\n        \"description\": \"Sit doloribus quia consequatur reprehenderit velit praesentium. Atque natus fuga quaerat praesentium consequatur nisi beatae. Odio rerum rerum molestiae numquam qui quo. Adipisci aut est et vero tenetur.\\n\\nModi maiores voluptatem nesciunt nemo qui hic. Nesciunt officiis fuga minima fugit. Labore deleniti omnis numquam et perferendis. Et iure aut et.\",\n        \"price\": \"298.84\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 403,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 12,\n        \"name\": \"quisquam laudantium sequi\",\n        \"description\": \"Velit et numquam ullam. Qui id ipsum iusto dolorem itaque eos. Accusamus qui ipsam tempore dolorem ipsam sunt est. Qui voluptatem laboriosam perspiciatis libero et.\\n\\nQuibusdam maiores molestiae ut quas. Minus aut ea qui et est voluptatum nesciunt earum. Nulla perspiciatis dolorum et necessitatibus ut est.\",\n        \"price\": \"19.41\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 432,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 13,\n        \"name\": \"illum ut quae\",\n        \"description\": \"Dolorem aut animi nesciunt non accusamus. Excepturi nihil eum veniam eos dolor. Et odio dignissimos voluptatibus dolor.\\n\\nIste possimus illum non et excepturi totam cumque blanditiis. Voluptate illum a aliquam nam. Iste omnis enim recusandae dolor.\",\n        \"price\": \"26.96\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 75,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 14,\n        \"name\": \"animi reprehenderit suscipit\",\n        \"description\": \"Amet ea et quis est. Ratione voluptas expedita aut aut. Facere voluptatibus sint similique et occaecati consequatur et.\\n\\nCupiditate libero nobis velit a eos beatae aut. Architecto facilis doloremque neque deleniti. Nam ducimus sint ea et.\",\n        \"price\": \"222.94\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 468,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 15,\n        \"name\": \"perferendis dolor autem\",\n        \"description\": \"Nulla dicta quam incidunt nemo asperiores aut. Aliquid officia numquam quis nostrum. Maxime dolorem voluptatem vero quod eum. Qui at earum sapiente nihil voluptatum.\\n\\nNumquam quo ipsum perspiciatis voluptas ut cum expedita. Ea tenetur qui sit expedita sunt architecto ut et. Et voluptate quos ullam. Quibusdam quod consequatur voluptatum impedit.\",\n        \"price\": \"694.43\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 69,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 16,\n        \"name\": \"quidem quae est\",\n        \"description\": \"In deleniti temporibus nam est tempore. Et debitis consequuntur voluptatem rerum. Perspiciatis non consectetur beatae nostrum. Sed eum ipsam minima odio.\\n\\nDicta repudiandae expedita sint. Et qui cum eum ea.\",\n        \"price\": \"454.44\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 354,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 17,\n        \"name\": \"ducimus a rerum\",\n        \"description\": \"Sint quis recusandae excepturi architecto repellendus odit. Sequi mollitia qui optio perferendis quisquam dolore. Et molestiae eum odio. Nam nulla saepe quia explicabo.\\n\\nVoluptas unde qui debitis doloribus optio et. Nemo eveniet sint in aut aut est explicabo. Qui nulla in maiores in. Et fugit numquam magni eligendi dolorem illum.\",\n        \"price\": \"351.19\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 71,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 18,\n        \"name\": \"sunt cumque quia\",\n        \"description\": \"Illum dolor inventore qui eligendi praesentium inventore. Quia est cum et quibusdam dolorum ipsum delectus vel. Quidem doloremque id illo cumque dicta dolorem ut.\\n\\nEt perferendis molestias consectetur eos. Autem voluptatem facilis tenetur. Ex necessitatibus rerum perferendis est nesciunt aut sunt. Sequi dolorem eligendi ut assumenda ipsam expedita quos.\",\n        \"price\": \"187.85\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 275,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 19,\n        \"name\": \"omnis cupiditate quo\",\n        \"description\": \"Ea eligendi sit dolores dolorem consectetur aliquid rerum. Necessitatibus corporis accusamus distinctio quia asperiores. Ut aut vel quia dolor cupiditate.\\n\\nVoluptatem et architecto libero. Et pariatur quia illo consequatur sed rerum quas impedit. Asperiores totam dolores rerum numquam excepturi sunt.\",\n        \"price\": \"14.13\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 337,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 20,\n        \"name\": \"incidunt accusantium amet\",\n        \"description\": \"Eum nostrum similique et deserunt deleniti nihil. Vel eos quia officia blanditiis. Autem voluptatibus eos quae nesciunt ratione assumenda odit voluptatem. Incidunt rerum velit qui in cumque laborum.\\n\\nUt dolorem rerum vel quae. Eligendi numquam aut ea. Eos nihil consequuntur voluptates aspernatur quaerat. Animi quo qui quae beatae et dolorem sint.\",\n        \"price\": \"164.26\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 153,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 21,\n        \"name\": \"perferendis iste facere\",\n        \"description\": \"Quae nemo odit eius repellat laboriosam. Quia corporis maiores possimus eveniet nostrum. Velit mollitia in repellendus ut consequuntur. Suscipit quasi culpa reiciendis ipsa aut.\\n\\nEst et quo eos. Distinctio sed omnis similique a et nihil. Omnis rerum amet ipsa porro nesciunt nam perspiciatis.\",\n        \"price\": \"456.97\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 202,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 22,\n        \"name\": \"et sint voluptatem\",\n        \"description\": \"Excepturi consequatur sunt accusamus beatae et ut. Omnis occaecati veritatis et modi facilis enim. Labore commodi tempore voluptatibus molestiae aut non.\\n\\nQuibusdam ipsum qui quos vero non sed repellat. Ut aut et vero ea. Et facere optio minus nisi et. Quae vel error quis sit asperiores omnis quae.\",\n        \"price\": \"863.68\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 154,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 23,\n        \"name\": \"sit animi odit\",\n        \"description\": \"Laboriosam distinctio corporis tempore at qui. Animi consequatur expedita error. Et minus et corporis neque corporis asperiores sit.\\n\\nSequi tempore et aut laudantium. Et et eveniet nisi assumenda adipisci earum aspernatur. Perspiciatis minus quod nesciunt dolorem error.\",\n        \"price\": \"500.11\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 352,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 24,\n        \"name\": \"ut qui sit\",\n        \"description\": \"Aliquam et expedita adipisci rerum. Voluptates aliquam et totam fugit. Et deserunt quae natus commodi voluptas error. Cumque adipisci consequuntur autem et odit.\\n\\nOfficiis numquam voluptatem quia voluptas dolor ut. Maiores sed et beatae saepe. Ea vitae quis recusandae esse. Praesentium laudantium tempora sapiente reprehenderit iste.\",\n        \"price\": \"369.90\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 99,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 25,\n        \"name\": \"non et est\",\n        \"description\": \"Adipisci id nobis qui laudantium voluptas voluptatem soluta ut. Et fuga voluptatem consequatur quia. Animi consectetur non magni et dolor quidem.\\n\\nIste fugit ut veritatis. Impedit quo velit ut est.\",\n        \"price\": \"602.96\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 364,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 26,\n        \"name\": \"nulla quia necessitatibus\",\n        \"description\": \"Qui commodi ut repellendus ut vel facere sed. Odit ex ut dolor fugit cumque alias. Et velit iure minus enim esse. Sunt laboriosam nemo eum sed error odio.\\n\\nA vel tempore veritatis aliquam. Sed voluptate praesentium et error ut molestiae hic. Voluptatem perferendis amet molestiae aut vel voluptate.\",\n        \"price\": \"465.30\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 365,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 27,\n        \"name\": \"enim sed blanditiis\",\n        \"description\": \"Error voluptatem necessitatibus veritatis quod ad cupiditate iste. Voluptatem exercitationem quia id similique necessitatibus accusamus. Aperiam quo porro temporibus optio dolorum perspiciatis.\\n\\nDeleniti est similique voluptatem ipsum non. Earum debitis vitae nobis rem. Quisquam doloribus est in autem dolores qui. Ut quam aliquam sapiente magnam similique dolore eos provident.\",\n        \"price\": \"863.71\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 65,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 28,\n        \"name\": \"consequatur quod molestiae\",\n        \"description\": \"Aut rerum sit cumque voluptates. Pariatur vel impedit asperiores sit eaque accusantium facere totam. Ut sequi ratione qui quod voluptatem vero.\\n\\nNecessitatibus aliquid sed natus perferendis asperiores odit. Quo modi inventore qui rerum. Impedit maxime dolorum rerum eius quia aut sit. Officia quo fuga non repellat animi laudantium.\",\n        \"price\": \"605.30\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 134,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 29,\n        \"name\": \"maxime at earum\",\n        \"description\": \"Nulla minima illum dicta quia error quis ea qui. Aut a velit omnis possimus rerum est. Voluptas sequi doloremque voluptates dignissimos ut. Iusto dolores accusamus omnis exercitationem.\\n\\nOccaecati dolor autem repudiandae corporis similique tempora consequuntur. Assumenda velit accusamus autem placeat. Iste dicta sit amet reiciendis velit impedit.\",\n        \"price\": \"418.93\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 410,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 30,\n        \"name\": \"eos mollitia sint\",\n        \"description\": \"Labore qui ad consectetur possimus repellat voluptatem voluptates. Est et architecto reprehenderit repellat. Alias eius repudiandae nulla minima. Maxime doloremque laborum ducimus nobis.\\n\\nAmet rem ipsum nisi excepturi ipsum. Quaerat perferendis iure et maxime nisi voluptatum. Possimus sit magnam eos quas ab voluptas.\",\n        \"price\": \"192.70\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 170,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 31,\n        \"name\": \"officiis qui dolorem\",\n        \"description\": \"Itaque eligendi nihil qui quae vel. Ut quia consequatur amet dolorem dolor dolore.\\n\\nNisi accusantium voluptatibus reiciendis ab eum qui explicabo omnis. Qui et et amet qui quod eum. Placeat unde quibusdam nihil ratione eaque. Ipsam ducimus ut in occaecati.\",\n        \"price\": \"866.45\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 485,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 32,\n        \"name\": \"commodi hic expedita\",\n        \"description\": \"Officiis veritatis a est aut natus iure. Dolores voluptate molestiae earum eum ad. Eligendi veniam consequuntur sed facere rem iure repellat. Incidunt fugiat porro a laudantium.\\n\\nAmet fugiat quisquam quis ex adipisci. Beatae recusandae aut eos eum animi aliquid quia. Error eum sit saepe ex vitae. Eaque officiis non vitae cumque non aperiam dolores.\",\n        \"price\": \"574.90\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 284,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 33,\n        \"name\": \"doloremque distinctio vel\",\n        \"description\": \"Quis a in aut soluta velit nostrum. Error maxime quis accusantium exercitationem modi sint. Est officia ea incidunt dolor eveniet. Aut animi in voluptatem nostrum repellendus eum.\\n\\nSit assumenda fuga laudantium et consequuntur explicabo quas placeat. Voluptatem et ad maxime autem nisi quia natus. Facere rerum quia vel molestiae temporibus.\",\n        \"price\": \"375.61\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 170,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 34,\n        \"name\": \"qui molestias nam\",\n        \"description\": \"Enim voluptatum repellendus sit et in. Maxime rerum quo et deleniti quae sequi quia. Ullam nemo maiores non molestiae pariatur eius.\\n\\nQuod et autem voluptatum sit autem voluptatem. Aut voluptatem et qui et deserunt exercitationem. Ut excepturi ducimus ea rerum explicabo. Non praesentium quam voluptas porro veritatis et.\",\n        \"price\": \"48.78\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 333,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 35,\n        \"name\": \"consequatur vero voluptatem\",\n        \"description\": \"Quasi debitis architecto dolores aperiam corporis iste corporis minus. Assumenda repudiandae provident qui ad totam. Ut rerum vero quidem occaecati error. Et ipsum nulla eos aut id error enim.\\n\\nPariatur rerum quia et est sint consequatur. Hic rem quis est. Enim dolorem commodi beatae explicabo placeat harum repudiandae. Quod repudiandae aut repellat dolorem esse et.\",\n        \"price\": \"953.25\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 59,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 36,\n        \"name\": \"et quis magnam\",\n        \"description\": \"Sed consequatur porro commodi et libero odit qui. Labore ea ad modi vel. Quis reiciendis officiis ea magni aliquam nostrum et. Itaque qui dolorem harum non veritatis. Consequuntur sunt omnis consequatur et.\\n\\nEveniet vel molestiae architecto dolores praesentium rerum totam. Aut accusamus quia totam ipsam non facere. Maxime eius harum porro. Rem distinctio amet ipsum delectus sunt id et.\",\n        \"price\": \"154.68\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 77,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 37,\n        \"name\": \"ipsum ut asperiores\",\n        \"description\": \"Non amet quos amet porro sed dolores. Enim ipsa architecto dolorum officiis eum.\\n\\nDolor eligendi voluptatum accusamus est necessitatibus. Voluptas omnis vitae commodi repudiandae et eum consequatur. Architecto amet blanditiis in qui ut occaecati voluptates. Pariatur veniam doloremque consequatur quis enim.\",\n        \"price\": \"253.82\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 226,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 38,\n        \"name\": \"illum animi vel\",\n        \"description\": \"Explicabo soluta ratione nulla voluptas. Deleniti eos ut similique tempore cupiditate doloribus. Minus aperiam soluta illum nisi blanditiis est ut.\\n\\nVoluptas est id voluptate et perspiciatis nihil neque. Non harum natus et dignissimos. Quia repellat nulla nemo omnis praesentium.\",\n        \"price\": \"959.55\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 63,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 39,\n        \"name\": \"officia et voluptatem\",\n        \"description\": \"Enim sed soluta sit sed eligendi earum sit. Voluptas cumque praesentium natus et sunt doloribus nulla. Architecto culpa repudiandae tempore ut sit.\\n\\nQuis voluptatem cum velit cumque ut consequuntur. Blanditiis error suscipit ipsa sunt vel aut inventore minima. Corporis non beatae illo laborum explicabo earum.\",\n        \"price\": \"654.40\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 166,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 40,\n        \"name\": \"nulla voluptatum voluptatem\",\n        \"description\": \"Ut nulla aut reiciendis ipsa fuga earum adipisci. Incidunt et cupiditate minus ut aut. Sunt itaque ipsum deserunt minima qui. Adipisci aut velit perspiciatis maxime. Optio ipsam et laudantium ipsa non.\\n\\nConsequatur explicabo corrupti unde dignissimos voluptatem reiciendis. Nulla similique voluptatem provident molestiae aspernatur saepe. Provident nostrum fugit qui qui. Aperiam reprehenderit provident cumque itaque nihil esse consequatur.\",\n        \"price\": \"834.88\",\n        \"is_active\": true,\n        \"discontinued\": true,\n        \"stock\": 88,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 41,\n        \"name\": \"tenetur illum sint\",\n        \"description\": \"Debitis laudantium natus et dolores vel cupiditate voluptates dolores. Voluptas iure est laboriosam.\\n\\nIllo provident rerum molestiae rerum cumque nihil sed aliquid. Voluptas quasi voluptas maiores vero quaerat incidunt sint enim. Voluptate ad qui hic. Ex dolores ut id est perspiciatis est aperiam.\",\n        \"price\": \"825.09\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 425,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 42,\n        \"name\": \"quidem molestiae sed\",\n        \"description\": \"Amet officiis rerum ut est et eaque dolore. Quia dolore enim ipsa ut laboriosam neque. Veniam impedit saepe voluptas eos aut.\\n\\nQui sit aut temporibus hic eum enim error. Mollitia iste a porro eum minima magnam odit voluptatem. Quos optio dolore in quaerat necessitatibus est ducimus velit. Architecto cupiditate voluptatum quis omnis pariatur ut eos laboriosam.\",\n        \"price\": \"646.50\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 359,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 43,\n        \"name\": \"dolor eligendi cupiditate\",\n        \"description\": \"Nihil minima sequi et eos itaque est. Vero et quis voluptatum. Unde labore sapiente ipsam sapiente molestiae distinctio optio.\\n\\nOmnis sit quis eum incidunt provident. Aliquam quam adipisci consequatur quod. Nam quia dolor consequuntur quia odio magni occaecati.\",\n        \"price\": \"243.22\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 197,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 44,\n        \"name\": \"ad aut labore\",\n        \"description\": \"Suscipit recusandae omnis sint ipsam aut ipsa. Eligendi recusandae dolorum tempora non non. Similique excepturi nam dolorum quo. Ut ipsum recusandae neque rerum quod ea.\\n\\nEligendi dolor illo possimus voluptatem non. Voluptatem eos sint eum quo. Vero tenetur dolore consequuntur qui.\",\n        \"price\": \"503.17\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 338,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 45,\n        \"name\": \"error non commodi\",\n        \"description\": \"Eaque aut eligendi qui corporis eveniet. Et sunt ex sit ab non voluptatum. Ad aut porro qui sint eius consequuntur. Exercitationem saepe velit consectetur dicta.\\n\\nUt perspiciatis aliquid quos dolores quibusdam ut ut. Quaerat doloribus ut voluptatum corrupti qui consequatur. Magnam ab accusantium corrupti qui accusantium. Minima facilis in blanditiis vel mollitia reiciendis.\",\n        \"price\": \"929.23\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 199,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 46,\n        \"name\": \"voluptate est dolores\",\n        \"description\": \"Tempora sit dolorem sed et voluptatibus pariatur modi. Asperiores porro molestias ad qui similique quia dolores tempore. Magnam unde tenetur beatae sint nobis. Repellat voluptatem non veritatis id.\\n\\nSoluta id sed laborum. Cupiditate provident quos assumenda ratione. Ut nihil facilis pariatur aut. Quis enim quos unde perspiciatis illo maxime ut.\",\n        \"price\": \"192.30\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 224,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 47,\n        \"name\": \"suscipit sint repudiandae\",\n        \"description\": \"Aut nulla est debitis quia dolores sint qui. Voluptas aliquid ratione repellat.\\n\\nOmnis veniam autem ut facilis. Sunt quibusdam dolorem atque recusandae qui rerum voluptatibus. Minus deserunt facere tempore est id omnis quaerat. Incidunt et aspernatur vitae perspiciatis sapiente.\",\n        \"price\": \"282.02\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 366,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 48,\n        \"name\": \"velit at enim\",\n        \"description\": \"Id inventore fuga qui distinctio soluta occaecati. Aliquam dolorem sit id. Aut dolorem corporis fugiat aut omnis totam. Voluptatum dolore vel consequatur facere aperiam error.\\n\\nAmet exercitationem odit sunt voluptatem. Quia atque nisi possimus occaecati blanditiis nam nesciunt. Omnis ducimus aspernatur ea numquam earum ad animi.\",\n        \"price\": \"561.18\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 404,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 49,\n        \"name\": \"sunt totam maiores\",\n        \"description\": \"Ipsam ut iure repudiandae eius. Consequuntur quasi ut unde nostrum distinctio. Corporis ex aut in omnis maiores laboriosam molestiae. Sed et eum facilis sit reiciendis possimus quaerat.\\n\\nEx doloribus rerum veritatis cum eos accusamus quisquam. Occaecati ut ullam iure non vero. Esse aut quibusdam sit facere est minima ut aliquam. Numquam minus quasi dicta incidunt. Laboriosam expedita enim et beatae omnis.\",\n        \"price\": \"999.74\",\n        \"is_active\": false,\n        \"discontinued\": false,\n        \"stock\": 265,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    },\n    {\n        \"id\": 50,\n        \"name\": \"officiis maiores velit\",\n        \"description\": \"Exercitationem vero velit ea et ea. Sunt quae vitae est et est enim amet laboriosam. Debitis laudantium cumque aliquid beatae.\\n\\nFuga non omnis consequatur ut ea. Rerum ullam iure est error. Quibusdam quidem voluptas et excepturi ut architecto. Ut est voluptatibus nihil veritatis recusandae temporibus tempora. Non temporibus deserunt quis qui aut fuga.\",\n        \"price\": \"304.14\",\n        \"is_active\": true,\n        \"discontinued\": false,\n        \"stock\": 489,\n        \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n        \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "products/getById",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDE3NzIsImV4cCI6MTc3NTU0NTM3MiwibmJmIjoxNzc1NTQxNzcyLCJqdGkiOiJRMlY3emtEdzRkTEFrOXdWIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiY2xpZW50IiwibmFtZSI6Ikphbmx1eSBNb3Jlbm8iLCJlbWFpbCI6Imphbmx1eS5tb3Jlbm9AZ21haWwuY29tIn0.EHVGmUsu3eTkVZJ8Xkj_WATBZ7dclLApyQ543_fheZY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/products/500",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products",
+            "500"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "products/getall-errortoken",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 06:25:07 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Token no proporcionado\"\n}"
+        },
+        {
+          "name": "products/getById",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products/50",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "50"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 06:28:09 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 50,\n    \"name\": \"officiis maiores velit\",\n    \"description\": \"Exercitationem vero velit ea et ea. Sunt quae vitae est et est enim amet laboriosam. Debitis laudantium cumque aliquid beatae.\\n\\nFuga non omnis consequatur ut ea. Rerum ullam iure est error. Quibusdam quidem voluptas et excepturi ut architecto. Ut est voluptatibus nihil veritatis recusandae temporibus tempora. Non temporibus deserunt quis qui aut fuga.\",\n    \"price\": \"304.14\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 489,\n    \"created_at\": \"2026-04-07T04:47:30.000000Z\",\n    \"updated_at\": \"2026-04-07T04:47:30.000000Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "signup",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Janluy Moreno\",\r\n    \"email\": \"janluy.moreno@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"password_confirmation\": \"123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "signup"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Registro de usuario cliente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Janluy Moreno\",\r\n    \"email\": \"janluy.moreno.nuevo.dos@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"password_confirmation\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 01:51:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Usuario creado exitosamente\",\n    \"user\": {\n        \"id\": 6,\n        \"name\": \"Janluy Moreno\",\n        \"email\": \"janluy.moreno.nuevo.dos@gmail.com\",\n        \"role\": \"client\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvc2lnbnVwIiwiaWF0IjoxNzc1NTI2NzEwLCJleHAiOjE3NzU1MzAzMTAsIm5iZiI6MTc3NTUyNjcxMCwianRpIjoiSkVRTG9NNXdSTkNEYzhXYyIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNsaWVudCIsIm5hbWUiOiJKYW5sdXkgTW9yZW5vIiwiZW1haWwiOiJqYW5sdXkubW9yZW5vLm51ZXZvLmRvc0BnbWFpbC5jb20ifQ.ze79YA06j7LiO_Y1lWU2ZCYSKKQDeGZD-xxjRwEO_Bw\",\n    \"token_type\": \"bearer\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "products/create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDM1MTEsImV4cCI6MTc3NTU0NzExMSwibmJmIjoxNzc1NTQzNTExLCJqdGkiOiJTVmtlSjFxSzV6Qkd2NmZXIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.K0Apitq-zHR81OkpguNG1KufyYp3C9INmO2KjBkVwWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Producto prueba\",\r\n    \"description\": \"Prueba de creacion de producto\",\r\n    \"price\": \"25000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "products/create-error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Producto prueba\",\r\n    \"description\": \"Prueba de creacion de producto\",\r\n    \"price\": \"25000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 05:38:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"No autorizado. Se requiere rol: admin\"\n}"
+        },
+        {
+          "name": "products/create-success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Producto prueba\",\r\n    \"description\": \"Prueba de creacion de producto\",\r\n    \"price\": \"25000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 05:46:12 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"name\": \"Producto prueba\",\n    \"description\": \"Prueba de creacion de producto\",\n    \"price\": \"25000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10,\n    \"updated_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"id\": 51\n}"
+        }
+      ]
+    },
+    {
+      "name": "products/edit",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDE3NzIsImV4cCI6MTc3NTU0NTM3MiwibmJmIjoxNzc1NTQxNzcyLCJqdGkiOiJRMlY3emtEdzRkTEFrOXdWIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiY2xpZW50IiwibmFtZSI6Ikphbmx1eSBNb3Jlbm8iLCJlbWFpbCI6Imphbmx1eS5tb3Jlbm9AZ21haWwuY29tIn0.EHVGmUsu3eTkVZJ8Xkj_WATBZ7dclLApyQ543_fheZY",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Producto prueba jlmc\",\r\n    \"description\": \"Prueba de edicion de producto\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/products/51",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products",
+            "51"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "products/edit-success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Producto prueba jlmc\",\r\n    \"description\": \"Prueba de edicion de producto\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/51",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "51"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 05:52:29 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 51,\n    \"name\": \"Producto prueba jlmc\",\n    \"description\": \"Prueba de edicion de producto\",\n    \"price\": \"250000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10000,\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"updated_at\": \"2026-04-07T05:52:29.000000Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "products/edit-patch",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDM1MTEsImV4cCI6MTc3NTU0NzExMSwibmJmIjoxNzc1NTQzNTExLCJqdGkiOiJTVmtlSjFxSzV6Qkd2NmZXIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.K0Apitq-zHR81OkpguNG1KufyYp3C9INmO2KjBkVwWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Producto prueba jlmc patch\",\r\n    \"description\": \"Prueba de edicion de producto\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/products/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products",
+            "5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "products/edit-success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Producto prueba jlmc\",\r\n    \"description\": \"Prueba de edicion de producto\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/51",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "51"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 05:52:29 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 51,\n    \"name\": \"Producto prueba jlmc\",\n    \"description\": \"Prueba de edicion de producto\",\n    \"price\": \"250000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10000,\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"updated_at\": \"2026-04-07T05:52:29.000000Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "products/delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDM1MTEsImV4cCI6MTc3NTU0NzExMSwibmJmIjoxNzc1NTQzNTExLCJqdGkiOiJTVmtlSjFxSzV6Qkd2NmZXIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.K0Apitq-zHR81OkpguNG1KufyYp3C9INmO2KjBkVwWw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/products/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "products",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "products/edit-success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Producto prueba jlmc\",\r\n    \"description\": \"Prueba de edicion de producto\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/51",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "51"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 05:52:29 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 51,\n    \"name\": \"Producto prueba jlmc\",\n    \"description\": \"Prueba de edicion de producto\",\n    \"price\": \"250000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10000,\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"updated_at\": \"2026-04-07T05:52:29.000000Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Admin User\",\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password123\",\r\n    \"password_confirmation\": \"password123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Registro de usuario cliente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Janluy Moreno\",\r\n    \"email\": \"janluy.moreno.nuevo.dos@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"password_confirmation\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 07 Apr 2026 01:51:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"Usuario creado exitosamente\",\n    \"user\": {\n        \"id\": 6,\n        \"name\": \"Janluy Moreno\",\n        \"email\": \"janluy.moreno.nuevo.dos@gmail.com\",\n        \"role\": \"client\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvc2lnbnVwIiwiaWF0IjoxNzc1NTI2NzEwLCJleHAiOjE3NzU1MzAzMTAsIm5iZiI6MTc3NTUyNjcxMCwianRpIjoiSkVRTG9NNXdSTkNEYzhXYyIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNsaWVudCIsIm5hbWUiOiJKYW5sdXkgTW9yZW5vIiwiZW1haWwiOiJqYW5sdXkubW9yZW5vLm51ZXZvLmRvc0BnbWFpbC5jb20ifQ.ze79YA06j7LiO_Y1lWU2ZCYSKKQDeGZD-xxjRwEO_Bw\",\n    \"token_type\": \"bearer\"\n}"
+        }
+      ]
+    }
+  ]
+}
