@@ -7,46 +7,131 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# E-Commerce API - Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este proyecto es una API de e-commerce construida con Laravel. Proporciona funcionalidades para gestionar productos y usuarios.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos Previos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Antes de comenzar, asegúrate de tener instalados los siguientes componentes en tu sistema:
 
-## Learning Laravel
+- PHP >= 8.0
+- Composer
+- postgreSQL
+- Git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Pasos para Clonar y Ejecutar el Proyecto en Local
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Clonar el Repositorio
 
-## Laravel Sponsors
+Clona el repositorio desde GitHub:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git clone https://github.com/janluyleonardo/e_comerce.git
+cd e_comerce
+```
 
-### Premium Partners
+### 2. Instalar Dependencias de PHP
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Instala las dependencias de PHP usando Composer:
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configurar el Archivo de Entorno
 
-## Code of Conduct
+Copia el archivo de ejemplo de configuración de entorno:
+
+```bash
+cp .env.example .env
+```
+
+Edita el archivo `.env` y configura las variables necesarias, especialmente la conexión a la base de datos:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=e_comerce
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+AUTH_GUARD=api
+```
+
+### 4. Generar la Clave de la Aplicación
+
+Genera una clave única para la aplicación:
+
+```bash
+php artisan key:generate
+```
+
+### 5. Configurar la Base de Datos
+
+Asegúrate de que tu base de datos esté creada y configurada. Luego, ejecuta las migraciones para crear las tablas:
+
+```bash
+php artisan migrate
+```
+
+Opcionalmente, ejecuta los seeders para poblar la base de datos con datos de ejemplo:
+
+```bash
+php artisan db:seed
+```
+
+Para producción:
+
+```bash
+npm run build
+```
+
+### 6. Ejecutar el Servidor de Desarrollo
+
+Inicia el servidor de desarrollo de Laravel:
+
+```bash
+php artisan serve
+```
+
+La aplicación estará disponible en `http://localhost:8000`.
+
+## Pruebas
+
+### Ejecutar Pruebas Unitarias y de Características
+
+Ejecuta las pruebas con PHPUnit:
+
+```bash
+php artisan test
+```
+
+### Probar la API con Postman
+
+Importa la colección de Postman incluida en el proyecto: `ecomerceAPI.postman_collection.json`.
+
+Configura el entorno en Postman con la URL base `http://localhost:8000/api` y realiza las pruebas de los endpoints.
+
+## Estructura del Proyecto
+
+- `app/Http/Controllers/`: Controladores de la API
+- `app/Models/`: Modelos de Eloquent (Product, User)
+- `database/migrations/`: Migraciones de base de datos
+- `routes/api.php`: Rutas de la API
+- `tests/`: Pruebas unitarias y de características
+
+## Contribución
+
+Si deseas contribuir al proyecto, por favor sigue estos pasos:
+
+1. Crea una rama para tu feature: `git checkout -b feature/nueva-funcionalidad`
+2. Realiza tus cambios y confirma: `git commit -m "Agrega nueva funcionalidad"`
+3. Envía un pull request
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
