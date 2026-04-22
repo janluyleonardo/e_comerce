@@ -17,6 +17,7 @@ class Product extends Model
         'is_active',
         'discontinued',
         'stock',
+        'created_by',
     ];
 
     protected $casts = [
@@ -25,4 +26,9 @@ class Product extends Model
         'discontinued' => 'boolean',
         'stock' => 'integer'
     ];
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

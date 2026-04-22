@@ -253,7 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(fontSize: 18, color: Colors.grey),
                   ),
                   Text(
-                    user?.name ?? 'Usuario',
+                    user != null ? '${user.name} (${user.productsCount})' : 'Usuario',
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -368,7 +368,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildAdminAction(Icons.add_box, 'Añadir'),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, '/create-product'),
+                child: _buildAdminAction(Icons.add_box, 'Añadir'),
+              ),
               _buildAdminAction(Icons.analytics, 'Ventas'),
               _buildAdminAction(Icons.people, 'Usuarios'),
             ],

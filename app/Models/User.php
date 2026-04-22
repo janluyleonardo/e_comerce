@@ -42,4 +42,9 @@ class User extends Authenticatable implements JWTSubject // ← DEBE tener "impl
             'email' => $this->email
         ];
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'created_by');
+    }
 }

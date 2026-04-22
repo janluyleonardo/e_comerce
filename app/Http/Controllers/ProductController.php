@@ -10,13 +10,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('creator:id,name')->get();
         return response()->json($products);
     }
 
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::with('creator:id,name')->find($id);
         if (!$product) {
             return response()->json(['error' => 'Producto no encontrado'], 404);
         }
@@ -38,8 +38,11 @@ class ProductController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $product = Product::create($request->all());
-        return response()->json($product, 201);
+        $data = $request->all();
+        $data['created_by'] = auth()->id(); // Tracing the authenticated user
+
+        $product = Product::create($data);
+        return response()->json($product->load('creator:id,name'), 201);
     }
 
     public function update(Request $request, $id)

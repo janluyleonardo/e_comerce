@@ -7,6 +7,7 @@ class Product {
   final bool discontinued;
   final int stock;
   final String? imageUrl;
+  final String? creatorName;
 
   Product({
     required this.id,
@@ -17,6 +18,7 @@ class Product {
     required this.discontinued,
     required this.stock,
     this.imageUrl,
+    this.creatorName,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -28,7 +30,8 @@ class Product {
       isActive: json['is_active'] == 1 || json['is_active'] == true,
       discontinued: json['discontinued'] == 1 || json['discontinued'] == true,
       stock: json['stock'] ?? 0,
-      imageUrl: json['image_url'], // Previsión por si se añade al backend
+      imageUrl: json['image_url'],
+      creatorName: json['creator'] != null ? json['creator']['name'] : 'Sistema',
     );
   }
 }

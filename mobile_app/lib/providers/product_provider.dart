@@ -39,4 +39,30 @@ class ProductProvider with ChangeNotifier {
   Product findById(int id) {
     return _products.firstWhere((prod) => prod.id == id);
   }
+
+  Future<bool> addProduct(String name, String description, double price, int stock, String token) async {
+    try {
+      final response = await http.post(
+        Uri.parse("${ApiConstants.baseUrl}/products"),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+        body: jsonEncode({
+          'name': name,
+          'description': description,
+          'price': price,
+          'stock': stock,
+        }),
+      );
+
+      if (response.statusCode == 201) {
+        await fetchProducts(token); // Refrescar lista
+        return true;
+      }
+    } catch (e) {
+      print("Error adding product: $e");
+    }
+    return false;
+  }
 }

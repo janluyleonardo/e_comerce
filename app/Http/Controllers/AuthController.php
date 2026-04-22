@@ -53,7 +53,8 @@ class AuthController extends Controller
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email,
-                    'role' => $user->role
+                    'role' => $user->role,
+                    'products_count' => 0
                 ],
                 'token' => $token,
                 'token_type' => 'bearer'
@@ -98,7 +99,7 @@ class AuthController extends Controller
             ], 500);
         }
 
-        $user = auth()->user();
+        $user = User::withCount('products')->find(auth()->id());
 
         return response()->json([
             'success' => true,
@@ -110,7 +111,23 @@ class AuthController extends Controller
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
-                'role' => $user->role
+                'role' => $user->role,
+                'products_count' => $user->products_count
+            ]
+        ]);
+    }
+
+    public function me()
+    {
+        $user = User::withCount('products')->find(auth()->id());
+        return response()->json([
+            'success' => true,
+            'user' => [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'role' => $user->role,
+                'products_count' => $user->products_count
             ]
         ]);
     }

@@ -107,4 +107,28 @@ class AuthProvider with ChangeNotifier {
     _user = User.fromJson(userData);
     notifyListeners();
   }
+
+  Future<void> refreshUser() async {
+    if (_token == null) return;
+    try {
+      final response = await http.get(
+        Uri.parse("${ApiConstants.baseUrl}/auth/me"),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $_token',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        _user = User.fromJson(data['user']);
+        
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('user', jsonEncode(data['user']));
+        notifyListeners();
+      }
+    } catch (e) {
+      print("Error refrescando usuario: $e");
+    }
+  }
 }
