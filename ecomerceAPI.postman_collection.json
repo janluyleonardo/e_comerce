@@ -14,7 +14,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDE3NzIsImV4cCI6MTc3NTU0NTM3MiwibmJmIjoxNzc1NTQxNzcyLCJqdGkiOiJRMlY3emtEdzRkTEFrOXdWIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiY2xpZW50IiwibmFtZSI6Ikphbmx1eSBNb3Jlbm8iLCJlbWFpbCI6Imphbmx1eS5tb3Jlbm9AZ21haWwuY29tIn0.EHVGmUsu3eTkVZJ8Xkj_WATBZ7dclLApyQ543_fheZY",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzcwMTE0OTgsImV4cCI6MTc3NzAxNTA5OCwibmJmIjoxNzc3MDExNDk4LCJqdGkiOiJaT3Q2ZGdXQWRyQTJ6bzh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.5WQ1UzhS1lrQwZk6t6zJsRHdV5T5byvCHWeVqRuZpR0",
               "type": "string"
             }
           ]
@@ -153,7 +153,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDE3NzIsImV4cCI6MTc3NTU0NTM3MiwibmJmIjoxNzc1NTQxNzcyLCJqdGkiOiJRMlY3emtEdzRkTEFrOXdWIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiY2xpZW50IiwibmFtZSI6Ikphbmx1eSBNb3Jlbm8iLCJlbWFpbCI6Imphbmx1eS5tb3Jlbm9AZ21haWwuY29tIn0.EHVGmUsu3eTkVZJ8Xkj_WATBZ7dclLApyQ543_fheZY",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzcwMTE0OTgsImV4cCI6MTc3NzAxNTA5OCwibmJmIjoxNzc3MDExNDk4LCJqdGkiOiJaT3Q2ZGdXQWRyQTJ6bzh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.5WQ1UzhS1lrQwZk6t6zJsRHdV5T5byvCHWeVqRuZpR0",
               "type": "string"
             }
           ]
@@ -161,7 +161,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8000/api/products/500",
+          "raw": "http://localhost:8000/api/products/57",
           "protocol": "http",
           "host": [
             "localhost"
@@ -170,7 +170,7 @@
           "path": [
             "api",
             "products",
-            "500"
+            "57"
           ]
         }
       },
@@ -392,7 +392,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDM1MTEsImV4cCI6MTc3NTU0NzExMSwibmJmIjoxNzc1NTQzNTExLCJqdGkiOiJTVmtlSjFxSzV6Qkd2NmZXIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.K0Apitq-zHR81OkpguNG1KufyYp3C9INmO2KjBkVwWw",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzcwMTE0OTgsImV4cCI6MTc3NzAxNTA5OCwibmJmIjoxNzc3MDExNDk4LCJqdGkiOiJaT3Q2ZGdXQWRyQTJ6bzh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.5WQ1UzhS1lrQwZk6t6zJsRHdV5T5byvCHWeVqRuZpR0",
               "type": "string"
             }
           ]
@@ -401,7 +401,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"Producto prueba\",\r\n    \"description\": \"Prueba de creacion de producto\",\r\n    \"price\": \"25000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10\r\n}",
+          "raw": "{\r\n    \"name\": \"producto final\",\r\n    \"description\": \"producto creado para entrega final del proeycto ecomerce\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 100\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -547,6 +547,69 @@
           ],
           "cookie": [],
           "body": "{\n    \"name\": \"Producto prueba\",\n    \"description\": \"Prueba de creacion de producto\",\n    \"price\": \"25000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10,\n    \"updated_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"id\": 51\n}"
+        },
+        {
+          "name": "error_response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"producto final\",\r\n    \"description\": \"producto creado para entrega final del proeycto ecomerce\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 100\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 24 Apr 2026 06:21:28 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Token expirado\"\n}"
         }
       ]
     },
@@ -558,7 +621,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDE3NzIsImV4cCI6MTc3NTU0NTM3MiwibmJmIjoxNzc1NTQxNzcyLCJqdGkiOiJRMlY3emtEdzRkTEFrOXdWIiwic3ViIjoiOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiY2xpZW50IiwibmFtZSI6Ikphbmx1eSBNb3Jlbm8iLCJlbWFpbCI6Imphbmx1eS5tb3Jlbm9AZ21haWwuY29tIn0.EHVGmUsu3eTkVZJ8Xkj_WATBZ7dclLApyQ543_fheZY",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzcwMTE0OTgsImV4cCI6MTc3NzAxNTA5OCwibmJmIjoxNzc3MDExNDk4LCJqdGkiOiJaT3Q2ZGdXQWRyQTJ6bzh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.5WQ1UzhS1lrQwZk6t6zJsRHdV5T5byvCHWeVqRuZpR0",
               "type": "string"
             }
           ]
@@ -575,7 +638,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8000/api/products/51",
+          "raw": "http://localhost:8000/api/products/5",
           "protocol": "http",
           "host": [
             "localhost"
@@ -584,7 +647,7 @@
           "path": [
             "api",
             "products",
-            "51"
+            "5"
           ]
         }
       },
@@ -652,6 +715,70 @@
           ],
           "cookie": [],
           "body": "{\n    \"id\": 51,\n    \"name\": \"Producto prueba jlmc\",\n    \"description\": \"Prueba de edicion de producto\",\n    \"price\": \"250000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10000,\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"updated_at\": \"2026-04-07T05:52:29.000000Z\"\n}"
+        },
+        {
+          "name": "products/edit-error",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Producto prueba jlmc\",\r\n    \"description\": \"Prueba de edicion de producto\",\r\n    \"price\": \"250000\",\r\n    \"is_active\": true,\r\n    \"discontinued\": false,\r\n    \"stock\": 10000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "5"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 24 Apr 2026 06:29:39 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Producto no encontrado\"\n}"
         }
       ]
     },
@@ -768,7 +895,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzU1NDM1MTEsImV4cCI6MTc3NTU0NzExMSwibmJmIjoxNzc1NTQzNTExLCJqdGkiOiJTVmtlSjFxSzV6Qkd2NmZXIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.K0Apitq-zHR81OkpguNG1KufyYp3C9INmO2KjBkVwWw",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzcwMTE0OTgsImV4cCI6MTc3NzAxNTA5OCwibmJmIjoxNzc3MDExNDk4LCJqdGkiOiJaT3Q2ZGdXQWRyQTJ6bzh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.5WQ1UzhS1lrQwZk6t6zJsRHdV5T5byvCHWeVqRuZpR0",
               "type": "string"
             }
           ]
@@ -785,7 +912,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8000/api/products/1",
+          "raw": "http://localhost:8000/api/products/5",
           "protocol": "http",
           "host": [
             "localhost"
@@ -794,7 +921,7 @@
           "path": [
             "api",
             "products",
-            "1"
+            "5"
           ]
         }
       },
@@ -862,6 +989,134 @@
           ],
           "cookie": [],
           "body": "{\n    \"id\": 51,\n    \"name\": \"Producto prueba jlmc\",\n    \"description\": \"Prueba de edicion de producto\",\n    \"price\": \"250000.00\",\n    \"is_active\": true,\n    \"discontinued\": false,\n    \"stock\": 10000,\n    \"created_at\": \"2026-04-07T05:46:12.000000Z\",\n    \"updated_at\": \"2026-04-07T05:52:29.000000Z\"\n}"
+        },
+        {
+          "name": "products/delete-error",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 24 Apr 2026 06:34:12 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Token expirado\"\n}"
+        },
+        {
+          "name": "products/delete-error-id_notFound",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 24 Apr 2026 06:34:55 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Producto no encontrado\"\n}"
         }
       ]
     },
@@ -962,6 +1217,69 @@
           "body": "{\n    \"success\": true,\n    \"message\": \"Usuario creado exitosamente\",\n    \"user\": {\n        \"id\": 6,\n        \"name\": \"Janluy Moreno\",\n        \"email\": \"janluy.moreno.nuevo.dos@gmail.com\",\n        \"role\": \"client\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvc2lnbnVwIiwiaWF0IjoxNzc1NTI2NzEwLCJleHAiOjE3NzU1MzAzMTAsIm5iZiI6MTc3NTUyNjcxMCwianRpIjoiSkVRTG9NNXdSTkNEYzhXYyIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNsaWVudCIsIm5hbWUiOiJKYW5sdXkgTW9yZW5vIiwiZW1haWwiOiJqYW5sdXkubW9yZW5vLm51ZXZvLmRvc0BnbWFpbC5jb20ifQ.ze79YA06j7LiO_Y1lWU2ZCYSKKQDeGZD-xxjRwEO_Bw\",\n    \"token_type\": \"bearer\"\n}"
         }
       ]
+    },
+    {
+      "name": "me",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzY4MzQyMzcsImV4cCI6MTc3NjgzNzgzNywibmJmIjoxNzc2ODM0MjM3LCJqdGkiOiJPZFBMQnZBSGlqVEJZMzZ3Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.8GweK_tZds-c3NY1ymT0anw8Mj6IJNmfrQLXem4f2ng",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/auth/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "stats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NzcwMTE0OTgsImV4cCI6MTc3NzAxNTA5OCwibmJmIjoxNzc3MDExNDk4LCJqdGkiOiJaT3Q2ZGdXQWRyQTJ6bzh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiQWRtaW4gVXNlciIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20ifQ.5WQ1UzhS1lrQwZk6t6zJsRHdV5T5byvCHWeVqRuZpR0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/users/me/stats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "me",
+            "stats"
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }

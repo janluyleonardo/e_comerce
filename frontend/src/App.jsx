@@ -10,8 +10,11 @@ export default function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
   const [activeTab, setActiveTab] = useState('chat'); // 'chat' or 'products'
+  const [isSignup, setIsSignup] = useState(false);
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [error, setError] = useState('');
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -30,7 +33,7 @@ export default function App() {
 
       newSocket.on('connect', () => console.log('Conectado al socket'));
       
-      newSocket.on('message-history', (history) => {
+      newSocket.on('messages', (history) => {
         setMessages(history);
       });
 
@@ -92,7 +95,40 @@ export default function App() {
       setUser(user);
       setView('main');
     } catch (err) {
-      setError(err.response?.data?.error || 'Error al iniciar sesión');
+      setError(err.response?.data?.error || err.response?.data?.message || 'Error al iniciar sesión');
+    }
+  };
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    setError('');
+    
+    if (password !== passwordConfirmation) {
+      setError('Las contraseñas no coinciden');
+      return;
+    }
+
+    try {
+      const res = await axios.post(`${API_URL}/auth/signup`, { 
+        name, 
+        email, 
+        password,
+        password_confirmation: passwordConfirmation 
+      });
+      const { token, user } = res.data;
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
+      setToken(token);
+      setUser(user);
+      setView('main');
+    } catch (err) {
+      const errors = err.response?.data?.errors;
+      if (errors) {
+        const firstError = Object.values(errors)[0][0];
+        setError(firstError);
+      } else {
+        setError(err.response?.data?.message || 'Error al registrar usuario');
+      }
     }
   };
 
@@ -149,10 +185,27 @@ export default function App() {
               <LogIn className="text-white w-8 h-8" />
             </div>
           </div>
-          <h2 className="text-3xl font-bold text-center text-white mb-2">Bienvenido</h2>
-          <p className="text-slate-400 text-center mb-8">Ingresa a tu cuenta para entrar</p>
+          <h2 className="text-3xl font-bold text-center text-white mb-2">
+            {isSignup ? 'Crea tu cuenta' : 'Bienvenido'}
+          </h2>
+          <p className="text-slate-400 text-center mb-8">
+            {isSignup ? 'Únete a EcoHome Store hoy mismo' : 'Ingresa a tu cuenta para entrar'}
+          </p>
           
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={isSignup ? handleSignup : handleLogin} className="space-y-4">
+            {isSignup && (
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-2">Nombre Completo</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                  placeholder="Juan Pérez"
+                  required
+                />
+              </div>
+            )}
             <div>
               <label className="block text-sm font-medium text-slate-300 mb-2">Email</label>
               <input
@@ -175,14 +228,42 @@ export default function App() {
                 required
               />
             </div>
-            {error && <p className="text-red-400 text-sm text-center">{error}</p>}
+            {isSignup && (
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-2">Confirmar Contraseña</label>
+                <input
+                  type="password"
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+            )}
+            {error && <p className="text-red-400 text-sm text-center font-medium">{error}</p>}
             <button
               type="submit"
-              className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
+              className="w-full py-3 mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
             >
-              Iniciar sesión
+              {isSignup ? 'Registrarse' : 'Iniciar sesión'}
             </button>
           </form>
+
+          <div className="mt-8 pt-6 border-t border-slate-700 text-center">
+            <p className="text-slate-400 text-sm">
+              {isSignup ? '¿Ya tienes una cuenta?' : '¿No tienes una cuenta?'}
+              <button
+                onClick={() => {
+                  setIsSignup(!isSignup);
+                  setError('');
+                }}
+                className="ml-2 text-indigo-400 font-semibold hover:text-indigo-300 transition-colors"
+              >
+                {isSignup ? 'Inicia sesión' : 'Regístrate aquí'}
+              </button>
+            </p>
+          </div>
         </div>
       </div>
     );

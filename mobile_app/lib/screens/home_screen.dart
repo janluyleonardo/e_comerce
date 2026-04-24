@@ -79,11 +79,11 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         : (_selectedIndex == 1 
             ? AppBar(
-                title: const Text('Actividad en Vivo', style: TextStyle(fontWeight: FontWeight.bold)),
+                title: const Text('Soporte en Vivo', style: TextStyle(fontWeight: FontWeight.bold)),
                 centerTitle: true,
                 actions: [
                   IconButton(
-                    icon: const Icon(Icons.delete_sweep_outlined),
+                    icon: const Icon(Icons.cleaning_services_outlined),
                     onPressed: () => socket.clearNotifications(),
                   ),
                 ],
@@ -114,9 +114,9 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Tienda',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_none),
-              activeIcon: Icon(Icons.notifications),
-              label: 'Vivo',
+              icon: Icon(Icons.chat_bubble_outline),
+              activeIcon: Icon(Icons.chat_bubble),
+              label: 'Soporte',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline),
@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildActivityContent(SocketProvider socket) {
+  Widget _buildActivityContent(SocketProvider socket, user) {
     return Column(
       children: [
         Container(
@@ -170,43 +170,46 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 )
-              : ListView.separated(
+              : ListView.builder(
                   padding: const EdgeInsets.all(20),
+                  reverse: true, // Para que el scroll empiece abajo
                   itemCount: socket.notifications.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 15),
                   itemBuilder: (ctx, i) {
                     final note = socket.notifications[i];
-                    return Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.grey.shade100),
-                      ),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: const Color(0xFF6366F1).withOpacity(0.1),
-                            child: const Icon(Icons.flash_on, color: Color(0xFF6366F1)),
+                    final isMe = note['user_id']?.toString() == user?.id.toString() || note['user'] == user?.name;
+                    
+                    return Align(
+                      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(vertical: 5),
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                        constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.75),
+                        decoration: BoxDecoration(
+                          color: isMe ? const Color(0xFF6366F1) : Colors.grey.shade200,
+                          borderRadius: BorderRadius.only(
+                            topLeft: const Radius.circular(15),
+                            topRight: const Radius.circular(15),
+                            bottomLeft: Radius.circular(isMe ? 15 : 0),
+                            bottomRight: Radius.circular(isMe ? 0 : 15),
                           ),
-                          const SizedBox(width: 15),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  note['user'] ?? 'Sistema',
-                                  style: const TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text(note['text'] ?? 'Nuevo aviso recibido'),
-                              ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                          children: [
+                            if (!isMe)
+                              Text(
+                                note['user'] ?? 'Sistema',
+                                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10, color: Color(0xFF6366F1)),
+                              ),
+                            Text(
+                              note['text'] ?? '',
+                              style: TextStyle(
+                                color: isMe ? Colors.white : Colors.black87,
+                                fontSize: 14,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Ahora',
-                            style: TextStyle(fontSize: 10, color: Colors.grey.shade400),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -221,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
               }
             },
             decoration: InputDecoration(
-              hintText: 'Enviar mensaje al canal vivo...',
+              hintText: 'Escribe tu consulta aquí...',
               suffixIcon: const Icon(Icons.send),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
               filled: true,

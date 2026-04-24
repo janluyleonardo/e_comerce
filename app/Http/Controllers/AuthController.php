@@ -131,4 +131,16 @@ class AuthController extends Controller
             ]
         ]);
     }
+
+    public function stats()
+    {
+        $user = User::withCount('products')->find(auth()->id());
+        return response()->json([
+            'success' => true,
+            'user_id' => $user->id,
+            'username' => $user->name,
+            'products_created' => $user->products_count,
+            'role' => $user->role
+        ]);
+    }
 }

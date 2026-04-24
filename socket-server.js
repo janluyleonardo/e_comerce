@@ -49,9 +49,9 @@ io.on('connection', async (socket) => {
     // Enviar los últimos 10 mensajes al conectarse (Actividad 3)
     try {
         const history = await pool.query(
-            'SELECT m.*, u.name as user_name FROM messages m JOIN users u ON m.user_id = u.id ORDER BY m.created_at DESC LIMIT 10'
+            'SELECT m.*, u.name as user FROM messages m JOIN users u ON m.user_id = u.id ORDER BY m.created_at DESC LIMIT 10'
         );
-        socket.emit('message-history', history.rows.reverse());
+        socket.emit('messages', history.rows.reverse());
     } catch (err) {
         console.error('[ERROR DB] Al obtener historial:', err);
     }

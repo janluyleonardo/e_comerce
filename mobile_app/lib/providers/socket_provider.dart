@@ -35,11 +35,20 @@ class SocketProvider with ChangeNotifier {
 
     _socket!.onConnectError((data) => print('Error de Conexión: $data'));
 
-    // Escuchar notificaciones o mensajes
+    // Escuchar historial al entrar (Actividad 3)
+    _socket!.on('messages', (data) {
+      if (data is List) {
+        _notifications = List<Map<String, dynamic>>.from(
+          data.map((item) => Map<String, dynamic>.from(item))
+        ).reversed.toList(); // Invertir para que el más nuevo esté arriba según la UI actual
+        notifyListeners();
+      }
+    });
+
+    // Escuchar nuevos mensajes
     _socket!.on('message', (data) {
       _notifications.insert(0, data);
       notifyListeners();
-      // Aquí podrías disparar un snackbar global o una notificación local
     });
   }
 

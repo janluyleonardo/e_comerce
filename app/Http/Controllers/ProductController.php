@@ -10,7 +10,13 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('creator:id,name')->get();
+        $products = Product::with('creator:id,name')->get()->map(function ($product) {
+            if ($product->creator) {
+                $product->creator->username = $product->creator->name;
+                unset($product->creator->name);
+            }
+            return $product;
+        });
         return response()->json($products);
     }
 
@@ -19,6 +25,10 @@ class ProductController extends Controller
         $product = Product::with('creator:id,name')->find($id);
         if (!$product) {
             return response()->json(['error' => 'Producto no encontrado'], 404);
+        }
+        if ($product->creator) {
+            $product->creator->username = $product->creator->name;
+            unset($product->creator->name);
         }
         return response()->json($product);
     }
@@ -42,7 +52,12 @@ class ProductController extends Controller
         $data['created_by'] = auth()->id(); // Tracing the authenticated user
 
         $product = Product::create($data);
-        return response()->json($product->load('creator:id,name'), 201);
+        $product->load('creator:id,name');
+        if ($product->creator) {
+            $product->creator->username = $product->creator->name;
+            unset($product->creator->name);
+        }
+        return response()->json($product, 201);
     }
 
     public function update(Request $request, $id)
