@@ -136,7 +136,7 @@ export default function App() {
       e.target.reset();
       alert('Producto creado exitosamente');
     } catch (err) {
-      alert('Error al crear producto');
+      alert('Error al crear producto' + err.response?.data?.error);
     }
   };
 

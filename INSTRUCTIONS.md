@@ -12,11 +12,12 @@ cd e_comerce
 ## 📋 Requisitos Previos
 
 Asegúrate de tener instalado lo siguiente:
-*   **PHP** >= 8.2 & **Composer**
-*   **Node.js** >= 18 & **npm**
-*   **PostgreSQL** (Base de datos principal)
-*   **Flutter SDK** (Para la app móvil)
-*   **XAMPP/Laragon** (Opcional, para gestionar el entorno PHP/DB en Windows)
+
+- **PHP** >= 8.2 & **Composer**
+- **Node.js** >= 18 & **npm**
+- **PostgreSQL** (Base de datos principal)
+- **Flutter SDK** (Para la app móvil)
+- **XAMPP/Laragon** (Opcional, para gestionar el entorno PHP/DB en Windows)
 
 ---
 
@@ -28,8 +29,22 @@ Asegúrate de tener instalado lo siguiente:
     composer install
     ```
 3.  Configura el archivo de entorno:
-    *   Copia `.env.example` a `.env`.
-    *   Configura tus credenciales de base de datos en `.env` (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+    - Copia `.env.example` a `.env`.
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    - Configura tus credenciales de base de datos en `.env` (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+
+    ```bash
+    DB_DATABASE=postgres
+    DB_USERNAME=postgres
+    DB_PASSWORD=password
+    DB_HOST=localhost
+    DB_PORT=5432
+    ```
+
 4.  Genera la clave de la aplicación:
     ```bash
     php artisan key:generate
@@ -42,7 +57,7 @@ Asegúrate de tener instalado lo siguiente:
     ```bash
     php artisan serve
     ```
-    *Servidor activo en: http://127.0.0.1:8000*
+    _Servidor activo en: http://127.0.0.1:8000_
 
 ---
 
@@ -58,7 +73,7 @@ Este servidor maneja las notificaciones y el chat en vivo.
     ```bash
     node socket-server.js
     ```
-    *Servidor activo en: http://localhost:6001*
+    _Servidor activo en: http://localhost:6001_
 
 ---
 
@@ -76,7 +91,7 @@ Este servidor maneja las notificaciones y el chat en vivo.
     ```bash
     npm run dev
     ```
-    *Acceso web en: http://localhost:5173*
+    _Acceso web en: http://localhost:5173_
 
 ---
 
@@ -91,14 +106,14 @@ Este servidor maneja las notificaciones y el chat en vivo.
     flutter pub get
     ```
 3.  Ejecuta la aplicación:
-    *   **Para Web:** `flutter run -d chrome`
-    *   **Para Android (Emulador):** `flutter run`
-    *   *Nota: La app está configurada para detectar automáticamente si usas localhost (Web) o 10.0.2.2 (Android).*
+    - **Para Web:** `flutter run -d chrome`
+    - **Para Android (Emulador):** `flutter run`
+    - _Nota: La app está configurada para detectar automáticamente si usas localhost (Web) o 10.0.2.2 (Android)._
 
 ---
 
 ## 📝 Notas Adicionales
 
-*   **Credenciales de Prueba:** Si ejecutaste el `--seed`, puedes usar cualquier usuario de la tabla `users` o crear uno nuevo desde la pantalla de Registro de la App.
-*   **Roles:** El sistema diferencia entre `admin` y `client`. Puedes cambiar el rol de un usuario directamente en la base de datos para ver el panel de administración en el móvil.
-*   **JWT:** La seguridad se maneja mediante tokens JWT compartidos entre Laravel, el Socket Server y las aplicaciones cliente.
+- **Credenciales de Prueba:** Si ejecutaste el `--seed`, puedes usar cualquier usuario de la tabla `users` o crear uno nuevo desde la pantalla de Registro de la App.
+- **Roles:** El sistema diferencia entre `admin` y `client`. Puedes cambiar el rol de un usuario directamente en la base de datos para ver el panel de administración en el móvil.
+- **JWT:** La seguridad se maneja mediante tokens JWT compartidos entre Laravel, el Socket Server y las aplicaciones cliente.
