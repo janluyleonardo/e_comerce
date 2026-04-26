@@ -1,6 +1,13 @@
 # Etapa de construcción
 FROM node:20-alpine AS build
 
+# Nota: Vite necesita estas variables en tiempo de compilación.
+# En Render Docker, a veces es necesario definirlas explícitamente.
+ARG VITE_API_URL
+ARG VITE_SOCKET_URL
+ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_SOCKET_URL=$VITE_SOCKET_URL
+
 WORKDIR /app
 
 # Copiar archivos de configuración
