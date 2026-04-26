@@ -30,8 +30,12 @@ RUN composer install --no-dev --optimize-autoloader
 # Ajustar permisos para almacenamiento y cache
 RUN chown -R www-data:www-data storage bootstrap/cache
 
+# Copiar el script de inicio y darle permisos
+COPY deploy.sh /usr/local/bin/deploy.sh
+RUN chmod +x /usr/local/bin/deploy.sh
+
 # Exponer puerto 80
 EXPOSE 80
 
-# Comando para iniciar Apache
-CMD ["apache2-foreground"]
+# Comando para iniciar usando el script
+CMD ["/usr/local/bin/deploy.sh"]
