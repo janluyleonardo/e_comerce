@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY package*.json ./
+RUN npm install --only=production
+
+# Copiar el archivo del servidor de sockets
+COPY socket-server.js .
+
+# Exponer el puerto configurado (Render asignará uno dinámicamente)
+EXPOSE 6001
+
+CMD ["node", "socket-server.js"]

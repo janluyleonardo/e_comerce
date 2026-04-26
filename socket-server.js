@@ -87,7 +87,7 @@ io.on('connection', async (socket) => {
     });
 });
 
-const PORT = process.env.SOCKET_PORT || 6001;
+const PORT = process.env.PORT || process.env.SOCKET_PORT || 6001;
 server.listen(PORT, () => {
     console.log(`\n=================================================`);
     console.log(`SERVIDOR SOCKET.IO ACTIVO EN PUERTO: ${PORT}`);

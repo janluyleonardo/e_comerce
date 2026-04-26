@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { io } from 'socket.io-client';
-import { LogIn, Send, User, LogOut, MessageSquare } from 'lucide-react';
+import { LogIn, Send, User, LogOut, MessageSquare, Pencil, Trash2, PlusCircle, X } from 'lucide-react';
 
-const API_URL = 'http://localhost:8000/api';
-const SOCKET_URL = 'http://localhost:6001';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:6001';
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -19,7 +19,8 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [products, setProducts] = useState([]);
-  const [socket, setSocket] = useState(null);
+   const [socket, setSocket] = useState(null);
+  const [editingProduct, setEditingProduct] = useState(null);
   const messagesEndRef = useRef(null);
 
   // Vista inicial basada en token
@@ -149,14 +150,27 @@ export default function App() {
     }
   };
 
-  const handleCreateProduct = async (e) => {
+   const handleCreateProduct = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     try {
-      await axios.post(`${API_URL}/products`, data, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      if (editingProduct) {
+        // ACTUALIZAR
+        await axios.put(`${API_URL}/products/${editingProduct.id}`, data, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        alert('Producto actualizado');
+      } else {
+        // CREAR
+        await axios.post(`${API_URL}/products`, data, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        alert('Producto creado exitosamente');
+      }
+      
+      setEditingProduct(null);
+      
       // Refrescar perfil (contador)
       const resProfile = await axios.get(`${API_URL}/auth/me`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -170,9 +184,27 @@ export default function App() {
       });
       setProducts(resProducts.data);
       e.target.reset();
-      alert('Producto creado exitosamente');
     } catch (err) {
-      alert('Error al crear producto' + err.response?.data?.error);
+      alert('Error: ' + (err.response?.data?.error || 'Ocurrió un problema'));
+    }
+  };
+
+  const handleDeleteProduct = async (id) => {
+    if (!window.confirm('¿Estás seguro de eliminar este producto?')) return;
+    try {
+      await axios.delete(`${API_URL}/products/${id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setProducts(products.filter(p => p.id !== id));
+      
+      // Actualizar contador en el perfil
+      const resProfile = await axios.get(`${API_URL}/auth/me`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setUser(resProfile.data.user);
+      localStorage.setItem('user', JSON.stringify(resProfile.data.user));
+    } catch (err) {
+      alert('Error al eliminar');
     }
   };
 
@@ -364,32 +396,78 @@ export default function App() {
           </div>
         ) : (
           <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 overflow-y-auto content-start">
-            {user?.role === 'admin' && (
-              <div className="md:col-span-1 bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl h-fit sticky top-0">
-                <h3 className="text-white font-bold mb-4 flex items-center gap-2">Nuevo Producto</h3>
+             {user?.role === 'admin' && (
+              <div className="md:col-span-1 bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-xl h-fit sticky top-24">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-white font-bold flex items-center gap-2">
+                    {editingProduct ? <Pencil className="w-4 h-4 text-amber-400" /> : <PlusCircle className="w-4 h-4 text-indigo-400" />}
+                    {editingProduct ? 'Editar Producto' : 'Nuevo Producto'}
+                  </h3>
+                  {editingProduct && (
+                    <button onClick={() => setEditingProduct(null)} className="text-slate-400 hover:text-white">
+                      <X className="w-5 h-5" />
+                    </button>
+                  )}
+                </div>
                 <form onSubmit={handleCreateProduct} className="space-y-4">
-                  <input name="name" placeholder="Nombre" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" required />
-                  <textarea name="description" placeholder="Descripción" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" />
-                  <input name="price" type="number" step="0.01" placeholder="Precio" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" required />
-                  <input name="stock" type="number" placeholder="Stock" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" required />
-                  <button type="submit" className="w-full bg-indigo-600 py-2 rounded-lg text-white font-bold hover:bg-indigo-700 transition-all">Publicar</button>
+                  <div>
+                    <label className="block text-[10px] text-slate-500 uppercase font-bold mb-1">Nombre</label>
+                    <input name="name" defaultValue={editingProduct?.name} key={editingProduct?.id + 'name'} placeholder="Nombre" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" required />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] text-slate-500 uppercase font-bold mb-1">Descripción</label>
+                    <textarea name="description" defaultValue={editingProduct?.description} key={editingProduct?.id + 'desc'} placeholder="Descripción" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] text-slate-500 uppercase font-bold mb-1">Precio</label>
+                    <input name="price" type="number" step="0.01" defaultValue={editingProduct?.price} key={editingProduct?.id + 'price'} placeholder="Precio" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" required />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] text-slate-500 uppercase font-bold mb-1">Stock</label>
+                    <input name="stock" type="number" defaultValue={editingProduct?.stock} key={editingProduct?.id + 'stock'} placeholder="Stock" className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-white outline-none focus:border-indigo-500" required />
+                  </div>
+                  <button type="submit" className={`w-full ${editingProduct ? 'bg-amber-600 hover:bg-amber-700' : 'bg-indigo-600 hover:bg-indigo-700'} py-2 rounded-lg text-white font-bold transition-all shadow-lg`}>
+                    {editingProduct ? 'Guardar Cambios' : 'Publicar Producto'}
+                  </button>
                 </form>
               </div>
             )}
             <div className={`md:col-span-${user?.role === 'admin' ? '2' : '3'} space-y-4`}>
               {products.map(p => (
-                <div key={p.id} className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex justify-between items-center group hover:border-indigo-500/50 transition-all">
-                  <div>
+                 <div key={p.id} className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex justify-between items-center group hover:border-indigo-500/50 transition-all">
+                  <div className="flex-1">
                     <h4 className="text-white font-bold">{p.name}</h4>
-                    <p className="text-slate-400 text-xs">{p.description}</p>
+                    <p className="text-slate-400 text-xs line-clamp-1">{p.description}</p>
                     <div className="flex gap-3 mt-2">
                       <span className="text-indigo-400 text-sm font-bold">${p.price}</span>
                       <span className="text-slate-500 text-xs">Stock: {p.stock}</span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Creado por</p>
-                    <p className="text-indigo-300 text-sm italic">{p.creator?.name || 'Sistema'}</p>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="text-right hidden sm:block">
+                      <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Creado por</p>
+                      <p className="text-indigo-300 text-sm italic">{p.creator?.name || 'Sistema'}</p>
+                    </div>
+                    
+                    {user?.role === 'admin' && (
+                      <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button 
+                          onClick={() => setEditingProduct(p)}
+                          className="p-2 bg-amber-500/10 text-amber-500 hover:bg-amber-500 hover:text-white rounded-lg transition-all"
+                          title="Editar"
+                        >
+                          <Pencil className="w-4 h-4" />
+                        </button>
+                        <button 
+                          onClick={() => handleDeleteProduct(p.id)}
+                          className="p-2 bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white rounded-lg transition-all"
+                          title="Eliminar"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

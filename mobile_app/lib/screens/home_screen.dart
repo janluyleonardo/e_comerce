@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final List<Widget> screens = [
       _buildHomeContent(user),
-      _buildActivityContent(socket),
+      _buildActivityContent(socket, user),
       const ProfileScreen(),
     ];
 
